@@ -1,0 +1,27 @@
+# ===== Credenciales reales (NUNCA al repositorio) =====
+revista/config/database.php
+revista-admin/config/database.php
+.env
+.env.*
+
+# ===== Scripts de instalación de un solo uso =====
+revista-admin/crear_admin.php
+revista-admin/instalar.php
+phpinfo.php
+probar_conexion.php
+
+# ===== Archivos subidos por los usuarios (viven solo en el servidor) =====
+# Se conservan las carpetas (.gitkeep), la imagen por defecto y el .htaccess
+revista-admin/uploads/*/*
+!revista-admin/uploads/*/.gitkeep
+!revista-admin/uploads/*/index.html
+!revista-admin/uploads/fotos/repo.jpg
+
+# ===== Dependencias y basura del sistema =====
+/vendor/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+*.rar
+*.zip

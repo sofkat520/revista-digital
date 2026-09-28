@@ -1,0 +1,220 @@
+/* ==========================================================
+   DDP Noticias · Panel de redacción
+   Complementa a Bootstrap 5; no lo reemplaza.
+   ========================================================== */
+
+:root{
+  --tinta:#16202c;
+  --tinta-suave:#5a6775;
+  --papel:#f4f6f8;
+  --linea:#dfe4ea;
+  --acento:#0b5d8f;
+  --acento-oscuro:#08466c;
+  --alerta:#b23b3b;
+  --radio:10px;
+}
+
+body{
+  background:var(--papel);
+  color:var(--tinta);
+  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+
+/* ---------- Barra superior ---------- */
+.admin-topbar{
+  background:#fff;
+  border-bottom:1px solid var(--linea);
+  padding:.55rem 0;
+}
+.admin-topbar .navbar-brand{
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:var(--tinta);
+}
+.admin-topbar .navbar-brand span{color:var(--acento);}
+.btn-sidebar,.btn-usuario{
+  border:1px solid var(--linea);
+  background:#fff;
+  border-radius:var(--radio);
+  color:var(--tinta);
+  font-size:.9rem;
+}
+.link-portal{
+  color:var(--tinta-suave);
+  text-decoration:none;
+  font-size:.9rem;
+}
+.link-portal:hover{color:var(--acento);}
+
+/* ---------- Estructura ---------- */
+.admin-shell{
+  display:flex;
+  align-items:flex-start;
+  gap:0;
+  min-height:calc(100vh - 118px);
+}
+.admin-sidebar{
+  width:236px;
+  flex:0 0 236px;
+  background:#fff;
+  border-right:1px solid var(--linea);
+  padding:1.25rem .75rem;
+  flex-direction:column;
+  min-height:calc(100vh - 118px);
+  position:sticky;
+  top:62px;
+}
+.admin-main{
+  flex:1 1 auto;
+  padding:1.75rem 1.5rem 3rem;
+  max-width:100%;
+  min-width:0;
+}
+.admin-footer{
+  border-top:1px solid var(--linea);
+  background:#fff;
+  color:var(--tinta-suave);
+  font-size:.85rem;
+  padding:1rem 1.5rem;
+}
+
+/* ---------- Navegación lateral ---------- */
+.nav-admin{display:flex;flex-direction:column;gap:2px;}
+.nav-item-admin{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  padding:.6rem .8rem;
+  border-radius:var(--radio);
+  color:var(--tinta-suave);
+  text-decoration:none;
+  font-size:.94rem;
+}
+.nav-item-admin i{width:18px;text-align:center;}
+.nav-item-admin:hover{background:var(--papel);color:var(--tinta);}
+.nav-item-admin.activo{background:var(--acento);color:#fff;}
+.nav-salir{color:var(--alerta);}
+.nav-salir:hover{background:#fdeeee;color:var(--alerta);}
+
+/* ---------- Cabeceras y paneles ---------- */
+.cabecera-seccion{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:1.5rem;
+}
+.cabecera-seccion h1{font-size:1.5rem;font-weight:700;margin:0;}
+.cabecera-seccion p{margin:.25rem 0 0;color:var(--tinta-suave);}
+
+.panel{
+  background:#fff;
+  border:1px solid var(--linea);
+  border-radius:var(--radio);
+  padding:1.25rem;
+}
+.titulo-panel{
+  font-size:1rem;
+  font-weight:700;
+  margin:0 0 1rem;
+}
+
+.tarjeta-dato{
+  background:#fff;
+  border:1px solid var(--linea);
+  border-radius:var(--radio);
+  padding:1.1rem 1.25rem;
+  height:100%;
+}
+.tarjeta-dato .cifra{display:block;font-size:2rem;font-weight:700;line-height:1;}
+.tarjeta-dato .etiqueta{display:block;color:var(--tinta-suave);font-size:.88rem;margin-top:.35rem;}
+
+.lista-recientes{list-style:none;margin:0;padding:0;}
+.lista-recientes li{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:.6rem 0;border-bottom:1px solid var(--linea);
+}
+.lista-recientes li:last-child{border-bottom:0;}
+.lista-recientes a{color:var(--tinta);text-decoration:none;}
+.lista-recientes a:hover{color:var(--acento);text-decoration:underline;}
+.lista-recientes span{color:var(--tinta-suave);font-size:.85rem;white-space:nowrap;}
+
+/* ---------- Botones ---------- */
+.btn-primario{
+  background:var(--acento);border:1px solid var(--acento);color:#fff;border-radius:var(--radio);
+}
+.btn-primario:hover{background:var(--acento-oscuro);border-color:var(--acento-oscuro);color:#fff;}
+.btn-secundario{
+  background:#fff;border:1px solid var(--linea);color:var(--tinta);border-radius:var(--radio);
+}
+.btn-secundario:hover{background:var(--papel);color:var(--tinta);}
+
+/* ---------- Tablas ---------- */
+.tabla-admin{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden;}
+.tabla-admin table{margin:0;}
+.tabla-admin thead th{
+  background:var(--papel);font-size:.8rem;font-weight:700;
+  color:var(--tinta-suave);border-bottom:1px solid var(--linea);
+}
+.tabla-admin td{vertical-align:middle;}
+.miniatura{width:64px;height:44px;object-fit:cover;border-radius:6px;background:var(--papel);}
+.chip-destacado{
+  background:#fff4d6;color:#8a5a00;border-radius:999px;
+  padding:.15rem .6rem;font-size:.75rem;font-weight:600;
+}
+
+/* ---------- Formularios y editor ---------- */
+.form-label{font-weight:600;font-size:.9rem;}
+.ayuda-campo{color:var(--tinta-suave);font-size:.82rem;}
+.ck-editor__editable_inline{min-height:340px;}
+.vista-previa-foto{
+  max-width:260px;border-radius:var(--radio);border:1px solid var(--linea);
+}
+
+/* ---------- Galería ---------- */
+.rejilla-galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:1rem;
+}
+.tarjeta-foto{
+  background:#fff;border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.tarjeta-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--papel);}
+.tarjeta-foto .cuerpo{padding:.7rem .8rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+.tarjeta-foto .nombre{font-size:.85rem;line-height:1.3;word-break:break-word;}
+.tarjeta-foto .acciones{display:flex;gap:.4rem;margin-top:auto;}
+
+.zona-vacia{
+  border:1px dashed var(--linea);
+  border-radius:var(--radio);
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  color:var(--tinta-suave);
+  background:#fff;
+}
+
+/* ---------- Login ---------- */
+.pagina-login{
+  background:var(--tinta);
+  display:flex;align-items:center;justify-content:center;min-height:100vh;padding:1.5rem;
+}
+.caja-login{
+  background:#fff;border-radius:14px;padding:2.25rem;width:100%;max-width:380px;
+}
+.marca-login{font-size:1.6rem;font-weight:700;margin:0;letter-spacing:-.02em;}
+.marca-login span{color:var(--acento);}
+.sub-login{color:var(--tinta-suave);margin:.15rem 0 1.5rem;font-size:.92rem;}
+
+/* ---------- Accesibilidad ---------- */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--acento);
+  outline-offset:2px;
+}
+
+@media (max-width:991.98px){
+  .admin-main{padding:1.25rem 1rem 2.5rem;}
+}
